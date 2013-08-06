@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Home</title>
+		<meta charset='utf-8'>
+		<script data-main='js/main' src='js/lib/require.js'></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<header>
+			<div id='user'>
+				<span><label for='login'>u</label><input type='button' id='login' value='Jerry' /></span>
+				<span><label for='logout'>o</label><input type='button' id='logout' value='退出' /></span>
+			</div>
+		</header>
+		<article>
+			<section id='welcome'>欢迎你&nbsp&nbsp<span>Jerry</span></section>
+			<section id='item-container'>
+				<ul>
+					<li class='item' id='description'>
+						<div class='item-content selected' data-name='设备简介'>
+							<!-- <img src="images/device.jpg" /> -->
+						</div>
+					</li>
+					<li class='item' id='result'><div class='item-content' data-name='检测结果'>
+						<!-- <img src="images/result.jpg" /> -->
+					</div></li>
+					<li class='item' id='statistics'><div class='item-content' data-name='统计分析'>
+						<!-- <img src="images/chart.jpg" /> -->
+					</div></li>
+					<li class='item' id='history'><div class='item-content' data-name='检测历史'>
+						<!-- <img src="images/list.jpg" /> -->
+					</div></li>
+					<li class='item' id='records'><div class='item-content' data-name='健康档案'>
+						<!-- <img src="images/record.jpg" /> -->
+					</div></li>
+				</ul>
+			</section>
+			<section id='tip'>你可以按下 &nbsp&nbsp<span>b</span>&nbsp&nbsp按钮，获得更多信息</section>
+		</article>
+		<footer>
+			<div id='toggle'>
+				<span>t</span>
+			</div>
+			<div id='detail'>
+				<h3>设备简介</h3>
+				<p>在本模块，你可以了解各种医疗设备。<br/>每种设备叫什么，怎么使用，作用是什么等等。</p>
+				<p>医疗设备指单独或者组合使用于人体的仪器、设备、器具、材料或者其他物品，包括所需要的软件。在健康检测上，普通设备有身高体重仪、肺活量计、血压计等，高端设备有CT、血液分析仪、DSA等等。</p>
+			</div>
+		</footer>
+	</body>
+</html>

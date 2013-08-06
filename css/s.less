@@ -1,0 +1,64 @@
+/*variables*/
+@bgColor:#f3f3f3;
+@mainColor:#3cd0ac;
+@tipColor:#ed5736;
+.round-corner(@radius:5px){
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+}
+.transition-all(@time:0.5s){
+	-moz-transition: all @time ease;
+    -webkit-transition: all @time ease;
+    -o-transition: all @time ease;
+    transition: all @time ease;
+}
+.rotation(@angle:180deg){
+	-moz-transform: rotate(@angle);
+	-webkit-transform: rotate(@angle);
+	-o-transform: rotate(@angle);
+	-ms-transform: rotate(@angle);
+	transform: rotate(@angle); 
+}
+
+@font-face {
+    font-family: 'iFont';
+    src: url('../fonts/icomoon.eot');
+    src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*css reset*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: 0;
+}
+header,article,section{
+	display: block;
+}
+
+html{
+	font-size: 20px;
+}
+body{
+	background-color: @bgColor;
+	font-family: 'Microsoft JhengHei','Microsoft YaHei',arial;
+}
+div{
+	//font-size: 10px;
+	height: 2.4rem;
+	width: 2.4rem;
+	background-color: @bgColor;
+}
+
+@media screen and (min-width: 1366px){
+	body{
+		background-color: #222;
+	}
+}

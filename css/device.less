@@ -1,0 +1,199 @@
+/*variables*/
+@bgColor:#f3f3f3;
+@mainColor:#3cd0ac;
+@tipColor:#ed5736;
+.round-corner(@radius:5px){
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+}
+.transition-all(@time:0.5s){
+	-moz-transition: all @time ease;
+    -webkit-transition: all @time ease;
+    -o-transition: all @time ease;
+    transition: all @time ease;
+}
+.rotation(@angle:180deg){
+	-moz-transform: rotate(@angle);
+	-webkit-transform: rotate(@angle);
+	-o-transform: rotate(@angle);
+	-ms-transform: rotate(@angle);
+	transform: rotate(@angle); 
+}
+
+@font-face {
+    font-family: 'iFont';
+    src: url('../fonts/icomoon.eot');
+    src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*css reset*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: 0;
+}
+
+
+body{
+	background-color: @bgColor;
+	font-family: 'Microsoft JhengHei','Microsoft YaHei',arial;
+}
+header{
+	height: 6vh;
+	min-height: 3.2em;
+	width: 100%;
+	#user{
+		position: absolute;
+		right: 1.2em;
+		top: 0.8em;
+		span{
+			display: inline-block;
+			overflow: hidden;
+			margin: 0 1em 0 0;
+			&:hover{
+				color: @mainColor;
+			}
+		}
+		input{
+			display: block;
+			cursor: default;
+			float: right;
+			font-family: 'Microsoft JhengHei','Microsoft YaHei',arial;
+			font-size: 1.2em;
+			line-height: 1.5em;
+			padding-left: 0.2em;
+			text-shadow: 1px 1px 0 #fff;
+			cursor: pointer;
+			&:hover{
+				color: @mainColor;
+			}
+		}
+		label{
+			font-family: iFont;
+			display: inline-block;
+			font-size: 1.5em;
+			cursor: pointer;
+			text-shadow: 1px 1px 0 #fff,-1px -1px 0 #fff; 
+		}
+	}
+}
+
+article{
+	width: 100%;
+	background-color: @mainColor;
+}
+#item-container{
+	cursor: default;
+	width: 100%;
+	box-sizing:border-box;
+	padding: 2em 0 0;
+	ul{
+		display: block;
+		position: relative;
+		width: 80%;
+		margin: 0 10% 0 10%; 
+		overflow: hidden;
+	}
+	.item{
+		width: 24%;
+		height: 24%;
+		box-sizing:border-box;
+		margin: 0 1% 2em 0;
+		list-style: none;
+		float: left;
+		text-align: center;
+		img{
+			width: 100%;
+			.round-corner(1.6em);
+		}
+		.selected{
+			border: 2px solid #fff;
+		}
+	}
+}
+
+#pop-box{
+	display: none;
+	height: 90vh;
+	width: 60vw;
+	position: fixed;
+	left: 20vw;
+	top: 5vh;
+	z-index: 10;
+	box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+	.round-corner(6px);
+	#title{
+		height: 6%;
+		width: 100%;
+		background-color: #999;
+		border-top-left-radius:8px 6px;
+		border-top-right-radius:8px 6px;
+		text-align: center;
+		#close{
+			font-family: iFont;
+			position: absolute;
+			right: 0.2em;
+			top: 0.2em;
+			font-size: 1.6em;
+			color: #fff;
+			cursor: pointer;
+			box-sizing:border-box;
+			.round-corner(0.8em);
+			background-color: rgba(255,128,0,.4);
+			&:hover{
+				background-color: rgba(255,128,0,1);
+				box-shadow: 0 0 10px rgba(255,128,0,.4);
+			}
+		}
+		p{
+			font-size: 1.6em;
+			padding-top: 0.12em;
+			text-shadow:1px 1px 0 #ccc;
+		}
+	}
+	#instruction{
+		height: 47%;
+		width: 100%;
+		background-color: #eee;
+	}
+	#usage{
+		height: 47%;
+		width: 100%;
+		background-color: #eee;
+	}
+	.item-wrapper{
+		height: 80%;
+		width: 90%;
+		position: relative;
+		left: 5%;
+		top: 10%;
+		box-sizing:border-box;
+		border-left: 2.4em solid @mainColor;
+		box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+		.sub-title{
+			position: absolute;
+			width: 1.8em;
+			left: -1.4em;
+			top: 50%;
+			margin-top: -3.6em;
+			font-size: 1.4em;
+		}
+	}
+}
+
+footer{
+	position: fixed;
+	z-index: 5;
+	bottom: 0;
+	left: 0;
+	height: 4vh;
+	width: 100%;
+	background-color: @bgColor;
+}

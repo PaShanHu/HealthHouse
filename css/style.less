@@ -1,0 +1,212 @@
+/*variables*/
+@bgColor:#f3f3f3;
+@mainColor:#3cd0ac;
+@tipColor:#ed5736;
+.round-corner(@radius:5px){
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+}
+.transition-all(@time:0.5s){
+	-moz-transition: all @time ease;
+    -webkit-transition: all @time ease;
+    -o-transition: all @time ease;
+    transition: all @time ease;
+}
+.rotation(@angle:180deg){
+	-moz-transform: rotate(@angle);
+	-webkit-transform: rotate(@angle);
+	-o-transform: rotate(@angle);
+	-ms-transform: rotate(@angle);
+	transform: rotate(@angle); 
+}
+
+@font-face {
+    font-family: 'iFont';
+    src: url('../fonts/icomoon.eot');
+    src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*css reset*/
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+html{
+	font-size: 20px;
+}
+body{
+	background-color: @bgColor;
+	font-family: 'Microsoft JhengHei','Microsoft YaHei',arial;
+}
+header{
+	height: 2.4rem;
+	width: 100%;
+	background-color: @bgColor;
+	box-sizing:border-box;
+	border-bottom: 1px solid #fff;
+	#user{
+		position: absolute;
+		right: 0.6rem;
+		top: 0.5rem;
+		span{
+			display: inline-block;
+			overflow: hidden;
+			margin: 0 0.5rem 0 0;
+			&:hover{
+				color: @mainColor;
+			}
+		}
+		input{
+			display: block;
+			cursor: default;
+			float: right;
+			font-family: 'Microsoft JhengHei','Microsoft YaHei',arial;
+			font-size: 0.9rem;
+			line-height: 1.1rem;
+			padding-left: 0.2rem;
+			text-shadow: 1px 1px 0 #fff;
+			cursor: pointer;
+			&:hover{
+				color: @mainColor;
+			}
+		}
+		label{
+			font-family: iFont;
+			display: inline-block;
+			font-size: 1rem;
+			cursor: pointer;
+			text-shadow: 1px 1px 0 #fff,-1px -1px 0 #fff; 
+		}
+	}
+}
+
+article{
+	width: 100%;
+	height: 26rem;
+	background-color: @mainColor;
+	text-align: center;
+}
+#welcome{
+	display: inline-block;
+	margin:1.6rem auto 2.8rem auto;
+	font-size: 1.6rem;
+}
+
+#item-container{
+	width: 51rem;
+	margin: 0 auto;
+	overflow: hidden;
+	cursor: default;
+	ul{
+		display: block;
+		position: relative;
+		left: 0;top: 0;
+		overflow: hidden;
+		width: 85rem;
+		height: 17rem;
+		box-sizing:border-box;
+	}
+	.item{
+		height: 17rem;
+		width: 17rem;
+		float: left;
+		box-sizing:border-box;
+		padding:0.8rem;
+		list-style: none;
+		text-align: center;
+		.item-content{
+			width: 98%;
+			height: 98%;
+			display: inline-block;
+			box-sizing:border-box;
+			.round-corner(0.8rem);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			box-shadow: 0 0 0.3rem rgba(0,0,0,.6);
+			-moz-transition: all 0.1s ease;
+		    -webkit-transition: all 0.1s ease;
+		    -o-transition: all 0.1s ease;
+		    transition: all 0.1s ease;
+		    img{
+		    	width: 100%;
+		    	.round-corner(0.8rem);
+		    }
+		}
+		.selected{
+			box-shadow: 0 0 1.2rem rgba(0,0,0,.8); 
+		}
+	}	
+}
+
+footer{
+	position: absolute;
+	background-color: @bgColor;
+	min-height: 10rem;
+	width: 100%;
+	bottom : 0;
+	box-sizing:border-box;
+	border-top: 1px solid #fff;
+	.transition-all(0.5s);	
+	#indicator{
+		position: absolute;
+		left: 23.4%;
+		top: -1.3rem;
+		background-color: @bgColor;
+		width: 0.1rem;
+		height: 0.1rem;
+		.rotation(-45deg);
+		border-top: 2.4rem solid @bgColor;
+		border-left: 2.4rem solid @bgColor;
+		z-index: 2;
+		-moz-transition: all 0.3s ease-in;
+	    -webkit-transition: all 0.3s ease-in;
+	    -o-transition: all 0.3s ease-in;
+	    transition: all 0.3s ease-in;
+	}
+	#module-info{
+		width: 74%;
+		margin:0 auto;
+		box-sizing:border-box;
+		padding-top: 1.25rem;
+		text-align: center;
+		overflow: hidden;
+		position: relative;
+		height: 100%;
+		#info-wrapper{
+			width: 100%;
+		}
+		h3{
+			font-size: 1.3rem;
+			font-weight: 400;
+		}
+		#detail-list{
+			width: 100%;
+			font-size: 1rem;
+			padding-top: 0.2rem;
+			list-style: none;
+			li{
+				float: left;
+				width: 33.3%;
+				border-top: 2px solid @tipColor;
+				p{
+					box-sizing:border-box;
+					padding: 0.4em 0.2em 0.2em;
+				}
+			}
+		}
+	}
+}
+
+// @media screen and (max-width: 1366px){
+// 	body{
+// 		background-color: #000;
+// 	}
+// }
